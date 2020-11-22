@@ -1,16 +1,26 @@
+import model.Bug;
+
 public class MainApp {
     public static void main(String[] args) {
 
-        Bug bug1 = new Bug("Description 1", "submitter1@email.com", 1);
-        Bug bug2 = new Bug("Description 2", "submitter2@email.com", 5);
+        Bug bug = new Bug("Description 1", "submitter1@email.com", 1);
 
-        bug1.showAllBugInfo();
+        bug.showAllBugInfo();
 
-        bug2.showBugStatus();
-        bug2.showSubmitter();
-        bug2.showBugPriority();
-
-        bug1.setBugToClosed();
-        bug1.showAllBugInfo();
+        bug.showSubmitter();
+        bug.showBugPriority();
+        bug.setBugToClosed();
+        bug.showBugStatus();
+        bug.setBugToOpen();
+        bug.showBugStatus();
+        bug.setBugDescription("Too short");
+        bug.setSubmitterEmail("EmailWithoutAtSign");
+        bug.setSubmitterEmail("EmailWithDouble@@sign");
+        bug.setBugPriority(0);
+        bug.setBugPriority(6);
+        bug.setBugPriority(1);
+        bug.showBugPriority();
+        bug.setBugPriority(5);
+        bug.showBugPriority();
     }
 }
