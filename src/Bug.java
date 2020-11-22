@@ -17,7 +17,7 @@ public class Bug {
         System.out.println("Bug description: " + bugDescription + "\n" +
                 "Submitter email: " + submitterEmail + "\n" +
                 "Bug priority: " + bugPriority + "\n" +
-                "Bug status: " + setBugStatusText(isOpened));
+                "Bug status: " + setBugStatusText());
     }
 
     void showSubmitter() {
@@ -25,21 +25,19 @@ public class Bug {
     }
 
     void showBugStatus() {
-        System.out.println("Bug status: " + setBugStatusText(isOpened));
+        System.out.println("Bug status: " + setBugStatusText());
     }
 
     void showBugPriority() {
         System.out.println("Bug Priority: " + bugPriority);
     }
 
-    String setBugStatusText(boolean isOpened) {
-        String isOpenedText;
+    String setBugStatusText() {
         if (isOpened) {
-            isOpenedText = "Opened";
+            return "Opened";
         } else {
-            isOpenedText = "Closed";
+            return "Closed";
         }
-        return isOpenedText;
     }
 
     void setBugToClosed() {
