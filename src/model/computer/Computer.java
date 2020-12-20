@@ -1,12 +1,15 @@
 package model.computer;
 
-public class Computer {
+abstract public class Computer {
 
     protected String name;
     protected String type;
     protected int hdd;
     protected int ram;
     protected boolean state;
+    protected int volumeLevel;
+    protected static final int MAX_VOLUME = 100;
+    protected static final int MIN_VOLUME = 0;
 
     public Computer(String name, String type, int hdd, int ram) {
         this.name = name;
@@ -14,6 +17,7 @@ public class Computer {
         this.hdd = hdd;
         this.ram = ram;
         this.state = false;
+        this.volumeLevel = 0;
     }
 
     public String getName() {
@@ -54,9 +58,24 @@ public class Computer {
 
     public void switchOff() {
         state = false;
+        System.out.println("Switching off computer: " + name);
     }
 
     public boolean getState() {
         return state;
     }
+
+    public abstract int volumeUp();
+
+    public abstract int volumeUp(int i);
+
+    public abstract int volumeDown();
+
+    public abstract int volumeDown(int i);
+
+    public int getVolumeLevel() {
+        System.out.println("Current \"" + name + "\" volume level: " + volumeLevel);
+        return volumeLevel;
+    }
+
 }

@@ -1,21 +1,44 @@
+import model.computer.Computer;
 import model.computer.Laptop;
 import model.computer.PC;
 
 public class MainApp {
     public static void main(String[] args) {
 
-        PC officeComputer = new PC("Office Computer", "HP", 500, 128);
-        Laptop gamingLaptop = new Laptop("XGames", "HP Games", 500, 256, 50);
+        Computer officeComputer1 = new PC("Office Computer 1", "HP", 500, 128);
+        Computer gamingLaptop1 = new Laptop("XGames 1", "HP Games", 500, 256, 50);
 
-        gamingLaptop.setBatteryLevel(0);
-        gamingLaptop.switchOn();
-        System.out.println(gamingLaptop.getState());
 
-        officeComputer.switchOn();
-        System.out.println(officeComputer.getState());
+        officeComputer1.getVolumeLevel();
+        officeComputer1.volumeUp();
+        officeComputer1.getVolumeLevel();
+        officeComputer1.volumeUp(22);
+        officeComputer1.getVolumeLevel();
+        officeComputer1.volumeUp(122);
+        officeComputer1.getVolumeLevel();
+        officeComputer1.volumeUp();
+        officeComputer1.getVolumeLevel();
+        officeComputer1.volumeDown();
+        officeComputer1.getVolumeLevel();
+        officeComputer1.volumeDown(101);
+        officeComputer1.getVolumeLevel();
+        officeComputer1.volumeDown();
+        officeComputer1.getVolumeLevel();
 
-        officeComputer.setPowerEnabled(true);
-        officeComputer.switchOn();
-        System.out.println(officeComputer.getState());
+        gamingLaptop1.getVolumeLevel();
+        gamingLaptop1.volumeUp();
+        gamingLaptop1.getVolumeLevel();
+        gamingLaptop1.volumeUp(9);
+        gamingLaptop1.getVolumeLevel();
+        gamingLaptop1.volumeUp(244);
+        gamingLaptop1.getVolumeLevel();
+        gamingLaptop1.volumeUp();
+        gamingLaptop1.getVolumeLevel();
+        gamingLaptop1.volumeDown();
+        gamingLaptop1.getVolumeLevel();
+        gamingLaptop1.volumeDown(155);
+        gamingLaptop1.getVolumeLevel();
+        gamingLaptop1.volumeDown();
+        gamingLaptop1.getVolumeLevel();
     }
 }
