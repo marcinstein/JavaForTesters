@@ -1,44 +1,29 @@
-import model.computer.Computer;
-import model.computer.Laptop;
-import model.computer.PC;
+import model.bug.Bug;
+import model.bug.BugReporter;
+
+import java.util.*;
 
 public class MainApp {
     public static void main(String[] args) {
 
-        Computer officeComputer1 = new PC("Office Computer 1", "HP", 500, 128);
-        Computer gamingLaptop1 = new Laptop("XGames 1", "HP Games", 500, 256, 50);
+        List<Bug> bugs = new ArrayList<>();
 
+        bugs.add(new Bug("10 Bug 10", new BugReporter("Marcin", "Testowy", "marcin@test.com"), 4));
+        bugs.add(new Bug("4 Bug 4", new BugReporter("Marcin", "Testowy", "marcin@test.com"), 4));
+        bugs.add(new Bug("20 Bug 20", new BugReporter("Marcin", "Testowy", "marcin@test.com"), 4));
+        bugs.add(new Bug("Bug duplicate", new BugReporter("Marcin", "Testowy", "marcin@test.com"), 4));
+        bugs.add(new Bug("Bug duplicate", new BugReporter("Marcin", "Testowy", "marcin@test.com"), 4));
+        bugs.add(new Bug("5 Bug 5", new BugReporter("Marcin", "Testowy", "marcin@test.com"), 4));
 
-        officeComputer1.getVolumeLevel();
-        officeComputer1.volumeUp();
-        officeComputer1.getVolumeLevel();
-        officeComputer1.volumeUp(22);
-        officeComputer1.getVolumeLevel();
-        officeComputer1.volumeUp(122);
-        officeComputer1.getVolumeLevel();
-        officeComputer1.volumeUp();
-        officeComputer1.getVolumeLevel();
-        officeComputer1.volumeDown();
-        officeComputer1.getVolumeLevel();
-        officeComputer1.volumeDown(101);
-        officeComputer1.getVolumeLevel();
-        officeComputer1.volumeDown();
-        officeComputer1.getVolumeLevel();
+        Set<Bug> uniqueBugs = new HashSet<>(bugs);
 
-        gamingLaptop1.getVolumeLevel();
-        gamingLaptop1.volumeUp();
-        gamingLaptop1.getVolumeLevel();
-        gamingLaptop1.volumeUp(9);
-        gamingLaptop1.getVolumeLevel();
-        gamingLaptop1.volumeUp(244);
-        gamingLaptop1.getVolumeLevel();
-        gamingLaptop1.volumeUp();
-        gamingLaptop1.getVolumeLevel();
-        gamingLaptop1.volumeDown();
-        gamingLaptop1.getVolumeLevel();
-        gamingLaptop1.volumeDown(155);
-        gamingLaptop1.getVolumeLevel();
-        gamingLaptop1.volumeDown();
-        gamingLaptop1.getVolumeLevel();
+        Set<Bug> sortedUniqueBugs = new TreeSet<>(uniqueBugs);
+
+        for (Bug bug : sortedUniqueBugs
+        ) {
+            System.out.println("----------");
+            bug.showAllBugInfo();
+        }
+        System.out.println("----------");
     }
 }
